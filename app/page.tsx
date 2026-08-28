@@ -19,6 +19,8 @@ import Image from 'next/image';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+const publicBasePath = process.env.NODE_ENV === 'production' ? '/soil-workshop' : '';
+
 const posterTopics = [
   {
     icon: ScanLine,
@@ -54,8 +56,8 @@ const posterTopics = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <header className="relative z-20 border-b border-white/15 bg-[#15382c] text-[#f6f1e5]">
+    <main className="min-h-screen overflow-hidden bg-background pb-24 text-foreground lg:pb-0">
+      <header className="sticky top-0 z-40 border-b border-white/15 bg-[#15382c]/95 text-[#f6f1e5] backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
           <a
             href="#top"
@@ -86,7 +88,7 @@ export default function Home() {
             >
               <a
                 className="rounded-full bg-[#d8d461] px-2.5 py-1.5 text-[#17392d]"
-                href="/soil-workshop/"
+                href={`${publicBasePath}/`}
                 lang="de"
                 aria-current="page"
               >
@@ -94,7 +96,7 @@ export default function Home() {
               </a>
               <a
                 className="rounded-full px-2.5 py-1.5 text-[#dbe3dc] transition-colors hover:text-white"
-                href="/soil-workshop/en/"
+                href={`${publicBasePath}/en/`}
                 lang="en"
               >
                 EN
@@ -115,9 +117,71 @@ export default function Home() {
         </div>
       </header>
 
+      <aside
+        aria-label="Seitenübersicht"
+        className="fixed left-3 top-1/2 z-30 hidden -translate-y-1/2 lg:block"
+      >
+        <nav className="w-36 overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-lg backdrop-blur-md">
+          <a
+            className="flex min-h-12 items-center gap-3 border-b border-[#17382c]/15 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#workshop"
+            aria-label="Zum Workshop"
+          >
+            <span className="text-xs font-bold">01</span>
+            <span className="text-sm font-semibold">Workshop</span>
+          </a>
+          <a
+            className="flex min-h-16 items-center gap-3 border-b border-[#17382c]/15 bg-[#d8d461] px-3 py-3 transition-colors hover:bg-[#ecea91]"
+            href="#call-for-posters"
+            aria-label="Zum Call for Posters"
+          >
+            <span className="text-xs font-bold">02</span>
+            <span className="text-left text-sm font-bold leading-4">Call for Poster</span>
+          </a>
+          <a
+            className="flex min-h-12 items-center gap-3 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#ort"
+            aria-label="Zum Veranstaltungsort"
+          >
+            <span className="text-xs font-bold">03</span>
+            <span className="text-sm font-semibold">Ort</span>
+          </a>
+        </nav>
+      </aside>
+
+      <nav
+        aria-label="Mobile Seitenübersicht"
+        className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 grid-cols-[1fr_1.25fr_0.8fr] overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-xl backdrop-blur-md lg:hidden"
+      >
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#workshop"
+          aria-label="Zum Workshop"
+        >
+          <span className="font-bold">01</span>
+          <span>Workshop</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 border-x border-[#17382c]/15 bg-[#d8d461] px-2 py-3 text-[0.6875rem] font-bold leading-3 transition-colors hover:bg-[#ecea91]"
+          href="#call-for-posters"
+          aria-label="Zum Call for Posters"
+        >
+          <span>02</span>
+          <span>Call for Poster</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#ort"
+          aria-label="Zum Veranstaltungsort"
+        >
+          <span className="font-bold">03</span>
+          <span>Ort</span>
+        </a>
+      </nav>
+
       <section id="top" className="relative bg-[#15382c] text-[#f6f1e5]">
         <div className="absolute inset-0 opacity-30 soil-pattern" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1fr_340px] lg:px-12 lg:pb-32">
+        <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1fr_340px] lg:pb-32 lg:pl-44 lg:pr-12">
           <div className="max-w-4xl">
             <p className="mb-8 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#d8d461] uppercase sm:text-sm">
               <span className="h-px w-10 bg-current" />
@@ -175,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="workshop" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.65fr_1.35fr] lg:px-12">
+      <section id="workshop" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.65fr_1.35fr] lg:pl-44 lg:pr-12">
         <div>
           <p className="section-label">Der Workshop</p>
           <h2 className="font-heading mt-4 max-w-sm text-4xl leading-tight tracking-tight sm:text-5xl">
@@ -184,7 +248,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl lg:pt-9">
-          <div className="space-y-6 text-lg leading-8 text-[#263e35]">
+          <div className="space-y-5 text-base leading-7 text-[#263e35]">
             <p>
               Die Geländeansprache von Bodenprofilen ist das Fundament des Bodenschutzes,
               doch sie ist zeitintensiv und aufwendig. Die starke Heterogenität von Böden und
@@ -253,13 +317,13 @@ export default function Home() {
       </section>
 
       <section id="call-for-posters" className="bg-[#d8d461] text-[#173126]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:pl-44 lg:pr-12">
           <div>
             <p className="section-label !text-[#67562c]">Poster-Session</p>
             <h2 className="font-heading mt-4 text-5xl leading-[0.98] tracking-[-0.04em] sm:text-7xl">
               Call for Posters
             </h2>
-            <div className="mt-10 max-w-4xl space-y-5 text-lg leading-8 text-[#263c2f]">
+            <div className="mt-10 max-w-4xl space-y-4 text-base leading-7 text-[#263c2f]">
               <p>
                 Im Rahmen des Workshops „KI in der Bodenkunde – Automatisierte Erkennung und
                 Klassifizierung von Bodenhorizonten“ am 9. Dezember 2026 in Berlin möchten wir
@@ -298,7 +362,7 @@ export default function Home() {
               <article key={title} className="border-b border-r border-[#66703a]/35 p-6 sm:p-8">
                 <Icon className="size-6 text-[#6e3f28]" strokeWidth={1.75} aria-hidden="true" />
                 <h3 className="mt-8 text-lg font-semibold">{title}</h3>
-                <p className="mt-3 leading-6 text-[#46523b]">{text}</p>
+                <p className="mt-3 leading-7 text-[#46523b]">{text}</p>
               </article>
             ))}
           </div>
@@ -351,7 +415,7 @@ export default function Home() {
       </section>
 
       <section id="ort" className="bg-[#efe8da]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:pl-44 lg:pr-12">
           <p className="section-label">Ort & Zeit</p>
           <h2 className="font-heading mt-4 text-4xl tracking-tight sm:text-5xl">Mitten in Berlin.</h2>
 
@@ -427,7 +491,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/bht.png"
+                src={`${publicBasePath}/logos/bht.png`}
                 alt="Logo der Berliner Hochschule für Technik"
                 width={247}
                 height={73}
@@ -442,7 +506,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/bgr.png"
+                src={`${publicBasePath}/logos/bgr.png`}
                 alt="Logo der Bundesanstalt für Geowissenschaften und Rohstoffe"
                 width={257}
                 height={76}
@@ -457,7 +521,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/calgo-lab.png"
+                src={`${publicBasePath}/logos/calgo-lab.png`}
                 alt="Logo des Cognitive Algorithms Lab"
                 width={598}
                 height={266}

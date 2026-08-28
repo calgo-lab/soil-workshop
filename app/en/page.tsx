@@ -20,6 +20,8 @@ import {
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
+const publicBasePath = process.env.NODE_ENV === 'production' ? '/soil-workshop' : '';
+
 const title = 'AI in Soil Science | SoilNet Workshop 2026';
 const description =
   'Workshop on AI-assisted detection of soil horizons on 9 December 2026 in Berlin, including a call for posters.';
@@ -30,10 +32,10 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: {
-    canonical: '/soil-workshop/en/',
+    canonical: `${publicBasePath}/en/`,
     languages: {
-      'de-DE': '/soil-workshop/',
-      en: '/soil-workshop/en/',
+      'de-DE': `${publicBasePath}/`,
+      en: `${publicBasePath}/en/`,
     },
   },
   openGraph: {
@@ -86,8 +88,8 @@ const posterTopics = [
 
 export default function EnglishHome() {
   return (
-    <main lang="en" className="min-h-screen overflow-hidden bg-background text-foreground">
-      <header className="relative z-20 border-b border-white/15 bg-[#15382c] text-[#f6f1e5]">
+    <main lang="en" className="min-h-screen overflow-hidden bg-background pb-24 text-foreground lg:pb-0">
+      <header className="sticky top-0 z-40 border-b border-white/15 bg-[#15382c]/95 text-[#f6f1e5] backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
           <a
             href="#top"
@@ -118,14 +120,14 @@ export default function EnglishHome() {
             >
               <a
                 className="rounded-full px-2.5 py-1.5 text-[#dbe3dc] transition-colors hover:text-white"
-                href="/soil-workshop/"
+                href={`${publicBasePath}/`}
                 lang="de"
               >
                 DE
               </a>
               <a
                 className="rounded-full bg-[#d8d461] px-2.5 py-1.5 text-[#17392d]"
-                href="/soil-workshop/en/"
+                href={`${publicBasePath}/en/`}
                 lang="en"
                 aria-current="page"
               >
@@ -147,9 +149,71 @@ export default function EnglishHome() {
         </div>
       </header>
 
+      <aside
+        aria-label="Page overview"
+        className="fixed left-3 top-1/2 z-30 hidden -translate-y-1/2 lg:block"
+      >
+        <nav className="w-36 overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-lg backdrop-blur-md">
+          <a
+            className="flex min-h-12 items-center gap-3 border-b border-[#17382c]/15 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#workshop"
+            aria-label="Go to workshop"
+          >
+            <span className="text-xs font-bold">01</span>
+            <span className="text-sm font-semibold">Workshop</span>
+          </a>
+          <a
+            className="flex min-h-16 items-center gap-3 border-b border-[#17382c]/15 bg-[#d8d461] px-3 py-3 transition-colors hover:bg-[#ecea91]"
+            href="#call-for-posters"
+            aria-label="Go to Call for Posters"
+          >
+            <span className="text-xs font-bold">02</span>
+            <span className="text-left text-sm font-bold leading-4">Call for Posters</span>
+          </a>
+          <a
+            className="flex min-h-12 items-center gap-3 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#venue"
+            aria-label="Go to venue"
+          >
+            <span className="text-xs font-bold">03</span>
+            <span className="text-sm font-semibold">Venue</span>
+          </a>
+        </nav>
+      </aside>
+
+      <nav
+        aria-label="Mobile page overview"
+        className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 grid-cols-[1fr_1.25fr_0.8fr] overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-xl backdrop-blur-md lg:hidden"
+      >
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#workshop"
+          aria-label="Go to workshop"
+        >
+          <span className="font-bold">01</span>
+          <span>Workshop</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 border-x border-[#17382c]/15 bg-[#d8d461] px-2 py-3 text-[0.6875rem] font-bold leading-3 transition-colors hover:bg-[#ecea91]"
+          href="#call-for-posters"
+          aria-label="Go to Call for Posters"
+        >
+          <span>02</span>
+          <span>Call for Posters</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#venue"
+          aria-label="Go to venue"
+        >
+          <span className="font-bold">03</span>
+          <span>Venue</span>
+        </a>
+      </nav>
+
       <section id="top" className="relative bg-[#15382c] text-[#f6f1e5]">
         <div className="absolute inset-0 opacity-30 soil-pattern" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1fr_340px] lg:px-12 lg:pb-32">
+        <div className="relative mx-auto grid max-w-7xl gap-14 px-5 pb-20 pt-16 sm:px-8 sm:pb-28 sm:pt-24 lg:grid-cols-[1fr_340px] lg:pb-32 lg:pl-44 lg:pr-12">
           <div className="max-w-4xl">
             <p className="mb-8 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#d8d461] uppercase sm:text-sm">
               <span className="h-px w-10 bg-current" />
@@ -207,7 +271,7 @@ export default function EnglishHome() {
         </div>
       </section>
 
-      <section id="workshop" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.65fr_1.35fr] lg:px-12">
+      <section id="workshop" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.65fr_1.35fr] lg:pl-44 lg:pr-12">
         <div>
           <p className="section-label">The workshop</p>
           <h2 className="font-heading mt-4 max-w-sm text-4xl leading-tight tracking-tight sm:text-5xl">
@@ -216,7 +280,7 @@ export default function EnglishHome() {
         </div>
 
         <div className="max-w-3xl lg:pt-9">
-          <div className="space-y-6 text-lg leading-8 text-[#263e35]">
+          <div className="space-y-5 text-base leading-7 text-[#263e35]">
             <p>
               Describing soil profiles in the field is fundamental to soil protection, but it
               is time-consuming and demanding. The high heterogeneity of soils and the
@@ -281,13 +345,13 @@ export default function EnglishHome() {
       </section>
 
       <section id="call-for-posters" className="bg-[#d8d461] text-[#173126]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:px-12">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:pl-44 lg:pr-12">
           <div>
             <p className="section-label !text-[#67562c]">Poster session</p>
             <h2 className="font-heading mt-4 text-5xl leading-[0.98] tracking-[-0.04em] sm:text-7xl">
               Call for Posters
             </h2>
-            <div className="mt-10 max-w-4xl space-y-5 text-lg leading-8 text-[#263c2f]">
+            <div className="mt-10 max-w-4xl space-y-4 text-base leading-7 text-[#263c2f]">
               <p>
                 As part of the workshop “AI in Soil Science – Automated Detection and
                 Classification of Soil Horizons” on 9 December 2026 in Berlin, we want to
@@ -326,7 +390,7 @@ export default function EnglishHome() {
               <article key={topicTitle} className="border-b border-r border-[#66703a]/35 p-6 sm:p-8">
                 <Icon className="size-6 text-[#6e3f28]" strokeWidth={1.75} aria-hidden="true" />
                 <h3 className="mt-8 text-lg font-semibold">{topicTitle}</h3>
-                <p className="mt-3 leading-6 text-[#46523b]">{text}</p>
+                <p className="mt-3 leading-7 text-[#46523b]">{text}</p>
               </article>
             ))}
           </div>
@@ -378,7 +442,7 @@ export default function EnglishHome() {
       </section>
 
       <section id="venue" className="bg-[#efe8da]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:pl-44 lg:pr-12">
           <p className="section-label">Venue & time</p>
           <h2 className="font-heading mt-4 text-4xl tracking-tight sm:text-5xl">
             In the heart of Berlin.
@@ -455,7 +519,7 @@ export default function EnglishHome() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/bht.png"
+                src={`${publicBasePath}/logos/bht.png`}
                 alt="Berlin University of Applied Sciences and Technology logo"
                 width={247}
                 height={73}
@@ -470,7 +534,7 @@ export default function EnglishHome() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/bgr.png"
+                src={`${publicBasePath}/logos/bgr.png`}
                 alt="Federal Institute for Geosciences and Natural Resources logo"
                 width={257}
                 height={76}
@@ -485,7 +549,7 @@ export default function EnglishHome() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/soil-workshop/logos/calgo-lab.png"
+                src={`${publicBasePath}/logos/calgo-lab.png`}
                 alt="Cognitive Algorithms Lab logo"
                 width={598}
                 height={266}

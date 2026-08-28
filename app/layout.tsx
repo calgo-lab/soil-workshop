@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+const publicBasePath = process.env.NODE_ENV === 'production' ? '/soil-workshop' : '';
 const title = 'KI in der Bodenkunde | SoilNet Workshop 2026';
 const description =
   'Workshop zu KI-gestützter Erkennung von Bodenhorizonten am 9. Dezember 2026 in Berlin – mit Call for Posters.';
@@ -12,13 +13,13 @@ export const metadata: Metadata = {
   title,
   description,
   icons: {
-    icon: '/soil-workshop/favicon.svg',
+    icon: `${publicBasePath}/favicon.svg`,
   },
   alternates: {
-    canonical: '/soil-workshop/',
+    canonical: `${publicBasePath}/`,
     languages: {
-      'de-DE': '/soil-workshop/',
-      en: '/soil-workshop/en/',
+      'de-DE': `${publicBasePath}/`,
+      en: `${publicBasePath}/en/`,
     },
   },
   openGraph: {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     images: [
       {
-        url: '/soil-workshop/og.png',
+        url: `${publicBasePath}/og.png`,
         width: 1200,
         height: 630,
         alt: 'KI in der Bodenkunde – SoilNet Workshop in Berlin am 9. Dezember 2026',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/soil-workshop/og.png'],
+    images: [`${publicBasePath}/og.png`],
   },
 };
 
