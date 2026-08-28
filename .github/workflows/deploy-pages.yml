@@ -39,7 +39,7 @@ jobs:
       - name: Build static site
         run: pnpm build
         env:
-          NEXT_PUBLIC_SITE_URL: https://soil-workshop.calgo-lab.de
+          NEXT_PUBLIC_SITE_URL: https://calgo-lab.de
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

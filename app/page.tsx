@@ -15,7 +15,6 @@ import {
   UsersRound,
 } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -85,21 +84,21 @@ export default function Home() {
               aria-label="Sprachauswahl"
               className="flex rounded-full border border-white/20 p-0.5 text-xs font-semibold"
             >
-              <Link
+              <a
                 className="rounded-full bg-[#d8d461] px-2.5 py-1.5 text-[#17392d]"
-                href="/"
+                href="/soil-workshop/"
                 lang="de"
                 aria-current="page"
               >
                 DE
-              </Link>
-              <Link
+              </a>
+              <a
                 className="rounded-full px-2.5 py-1.5 text-[#dbe3dc] transition-colors hover:text-white"
-                href="/en/"
+                href="/soil-workshop/en/"
                 lang="en"
               >
                 EN
-              </Link>
+              </a>
             </nav>
             <a
               href="#call-for-posters"
@@ -428,7 +427,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/logos/bht.png"
+                src="/soil-workshop/logos/bht.png"
                 alt="Logo der Berliner Hochschule für Technik"
                 width={247}
                 height={73}
@@ -443,7 +442,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/logos/bgr.png"
+                src="/soil-workshop/logos/bgr.png"
                 alt="Logo der Bundesanstalt für Geowissenschaften und Rohstoffe"
                 width={257}
                 height={76}
@@ -458,7 +457,7 @@ export default function Home() {
             >
               <Image
                 className="max-h-20 w-full object-contain"
-                src="/logos/calgo-lab.png"
+                src="/soil-workshop/logos/calgo-lab.png"
                 alt="Logo des Cognitive Algorithms Lab"
                 width={598}
                 height={266}

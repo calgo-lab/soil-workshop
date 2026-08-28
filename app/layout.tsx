@@ -11,11 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  icons: {
+    icon: '/soil-workshop/favicon.svg',
+  },
   alternates: {
-    canonical: '/',
+    canonical: '/soil-workshop/',
     languages: {
-      'de-DE': '/',
-      en: '/en/',
+      'de-DE': '/soil-workshop/',
+      en: '/soil-workshop/en/',
     },
   },
   openGraph: {
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     images: [
       {
-        url: '/og.png',
+        url: '/soil-workshop/og.png',
         width: 1200,
         height: 630,
         alt: 'KI in der Bodenkunde – SoilNet Workshop in Berlin am 9. Dezember 2026',
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/og.png'],
+    images: ['/soil-workshop/og.png'],
   },
 };
 
