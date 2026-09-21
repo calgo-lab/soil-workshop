@@ -250,11 +250,11 @@ export default function Home() {
         <div className="max-w-3xl lg:pt-9">
           <div className="space-y-5 text-base leading-7 text-[#263e35]">
             <p>
-              Die Geländeansprache von Bodenprofilen ist das Fundament des Bodenschutzes,
+              Die Geländeansprache von Bodenprofilen ist das Fundament von Bodenkartierung und Bodenschutz,
               doch sie ist zeitintensiv und aufwendig. Die starke Heterogenität von Böden und
               die daraus resultierende große Anzahl an Bodenhorizonten sorgt auch dafür, dass
               ein Bodenprofil von mehreren BodenkundlerInnen häufig unterschiedlich
-              beschrieben wird.
+              beschrieben werden kann.
             </p>
             <p>
               Um die Ansprache von Bodenprofilen zu vereinfachen und die Qualität von

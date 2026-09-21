@@ -282,10 +282,10 @@ export default function EnglishHome() {
         <div className="max-w-3xl lg:pt-9">
           <div className="space-y-5 text-base leading-7 text-[#263e35]">
             <p>
-              Describing soil profiles in the field is fundamental to soil protection, but it
-              is time-consuming and demanding. The high heterogeneity of soils and the
-              resulting large number of soil horizons also mean that the same soil profile is
-              often described differently by different soil scientists.
+              Describing soil profiles in the field is fundamental to soil mapping and soil
+              protection, but it is time-consuming and demanding. The high heterogeneity of
+              soils and the resulting large number of soil horizons also mean that the same
+              soil profile can often be described differently by different soil scientists.
             </p>
             <p>
               To simplify soil profile description and improve the quality of soil science
