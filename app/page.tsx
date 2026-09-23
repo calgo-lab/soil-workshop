@@ -149,6 +149,19 @@ export default function Home() {
         </nav>
       </aside>
 
+      <a
+        href="https://eveeno.com/calgolab-soilnet-workshop"
+        target="_blank"
+        rel="noreferrer"
+        className={cn(
+          buttonVariants({ size: 'lg' }),
+          'fixed right-3 bottom-20 z-50 h-12 rounded-full bg-[#d8d461] px-5 text-base font-semibold text-[#17392d] shadow-xl ring-1 ring-[#17392d]/15 hover:bg-[#ecea91] sm:right-6 lg:bottom-6',
+        )}
+      >
+        Jetzt anmelden
+        <ArrowUpRight aria-hidden="true" />
+      </a>
+
       <nav
         aria-label="Mobile Seitenübersicht"
         className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 grid-cols-[1fr_1.25fr_0.8fr] overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-xl backdrop-blur-md lg:hidden"
@@ -196,6 +209,18 @@ export default function Home() {
               Automatisierte Erkennung und Klassifizierung von Bodenhorizonten – ein
               Workshop über digitale Methoden, Forschung und Praxis.
             </p>
+            <a
+              href="https://eveeno.com/calgolab-soilnet-workshop"
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                buttonVariants({ size: 'lg' }),
+                'mt-10 h-12 rounded-full bg-[#d8d461] px-6 text-base font-semibold text-[#17392d] hover:bg-[#ecea91]',
+              )}
+            >
+              Jetzt anmelden
+              <ArrowUpRight aria-hidden="true" />
+            </a>
           </div>
 
           <aside className="self-end border-l border-[#d8d461]/50 pl-6 lg:mb-2 lg:pl-8">
