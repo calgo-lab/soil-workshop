@@ -79,6 +79,9 @@ export default function Home() {
             <a className="transition-colors hover:text-[#d8d461]" href="#ort">
               Ort
             </a>
+            <a className="transition-colors hover:text-[#d8d461]" href="#kontakt">
+              Kontakt
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -146,6 +149,14 @@ export default function Home() {
             <span className="text-xs font-bold">03</span>
             <span className="text-sm font-semibold">Ort</span>
           </a>
+          <a
+            className="flex min-h-12 items-center gap-3 border-t border-[#17382c]/15 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#kontakt"
+            aria-label="Zum Kontakt"
+          >
+            <span className="text-xs font-bold">04</span>
+            <span className="text-sm font-semibold">Kontakt</span>
+          </a>
         </nav>
       </aside>
 
@@ -189,6 +200,14 @@ export default function Home() {
         >
           <span className="font-bold">03</span>
           <span>Ort</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 border-l border-[#17382c]/15 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#kontakt"
+          aria-label="Zum Kontakt"
+        >
+          <span className="font-bold">04</span>
+          <span>Kontakt</span>
         </a>
       </nav>
 
@@ -401,26 +420,29 @@ export default function Home() {
                 Titel und Abstract einreichen
               </h3>
               <p className="mt-5 max-w-2xl leading-7 text-[#dbe3dc]">
-                Bitte senden Sie einen Titel und ein Abstract bis zum 10. Oktober 2026 per
-                E-Mail an{' '}
+                Bitte reichen Sie Titel und Abstract im Rahmen der Workshop-Anmeldung auf{' '}
                 <a
                   className="font-semibold text-white underline decoration-[#d8d461]/50 underline-offset-4 hover:decoration-[#d8d461]"
-                  href="mailto:vipin.singh@bht-berlin.de"
+                  href="https://eveeno.com/calgolab-soilnet-workshop"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  vipin.singh@bht-berlin.de
-                </a>
-                . Die Poster werden während des Workshops ausgestellt; für den gemeinsamen
-                Austausch sind rund 30 Minuten vorgesehen.
+                  eveeno.com
+                </a>{' '}
+                bis zum 10. Oktober 2026 ein. Die Poster werden während des Workshops
+                ausgestellt; für den gemeinsamen Austausch sind rund 30 Minuten vorgesehen.
               </p>
               <a
                 className={cn(
                   buttonVariants({ size: 'lg' }),
                   'mt-7 h-11 rounded-full bg-[#d8d461] px-5 font-semibold text-[#17382c] hover:bg-[#ecea91]',
                 )}
-                href="mailto:vipin.singh@bht-berlin.de?subject=Call%20for%20Posters%20%E2%80%93%20SoilNet%20Workshop"
+                href="https://eveeno.com/calgolab-soilnet-workshop"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Mail aria-hidden="true" />
-                Per E-Mail einreichen
+                Über die Anmeldung einreichen
               </a>
             </div>
             <div className="flex items-center border-t border-white/15 p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
@@ -490,6 +512,28 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="kontakt" className="bg-[#efe8da]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:pl-44 lg:pr-12">
+          <p className="section-label">Kontakt</p>
+          <h2 className="font-heading mt-4 text-4xl tracking-tight sm:text-5xl">
+            Fragen zum Workshop?
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-7 text-muted-foreground">
+            Bei Fragen zum Workshop oder zur Poster-Session schreiben Sie uns gerne eine E-Mail:
+          </p>
+          <a
+            className={cn(
+              buttonVariants({ size: 'lg' }),
+              'mt-7 h-11 rounded-full bg-[#17382c] px-5 font-semibold text-[#f6f1e5] hover:bg-[#1f4a3a]',
+            )}
+            href="mailto:vipin.singh@bht-berlin.de"
+          >
+            <Mail aria-hidden="true" />
+            vipin.singh@bht-berlin.de
+          </a>
         </div>
       </section>
 

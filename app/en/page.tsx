@@ -111,6 +111,9 @@ export default function EnglishHome() {
             <a className="transition-colors hover:text-[#d8d461]" href="#venue">
               Venue
             </a>
+            <a className="transition-colors hover:text-[#d8d461]" href="#contact">
+              Contact
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -178,6 +181,14 @@ export default function EnglishHome() {
             <span className="text-xs font-bold">03</span>
             <span className="text-sm font-semibold">Venue</span>
           </a>
+          <a
+            className="flex min-h-12 items-center gap-3 border-t border-[#17382c]/15 px-3 py-3 transition-colors hover:bg-[#e9eadb]"
+            href="#contact"
+            aria-label="Go to contact"
+          >
+            <span className="text-xs font-bold">04</span>
+            <span className="text-sm font-semibold">Contact</span>
+          </a>
         </nav>
       </aside>
 
@@ -196,7 +207,7 @@ export default function EnglishHome() {
 
       <nav
         aria-label="Mobile page overview"
-        className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 grid-cols-[1fr_1.25fr_0.8fr] overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-xl backdrop-blur-md lg:hidden"
+        className="fixed bottom-3 left-1/2 z-50 grid w-[calc(100%-1.5rem)] max-w-md -translate-x-1/2 grid-cols-[1fr_1.25fr_0.8fr_0.9fr] overflow-hidden rounded-2xl border border-[#17382c]/20 bg-[#f7f2e8]/95 text-[#17382c] shadow-xl backdrop-blur-md lg:hidden"
       >
         <a
           className="flex min-h-12 items-center justify-center gap-1.5 px-2 py-3 text-xs font-semibold transition-colors hover:bg-[#e9eadb]"
@@ -221,6 +232,14 @@ export default function EnglishHome() {
         >
           <span className="font-bold">03</span>
           <span>Venue</span>
+        </a>
+        <a
+          className="flex min-h-12 items-center justify-center gap-1.5 border-l border-[#17382c]/15 px-2 py-3 text-[0.6875rem] font-semibold transition-colors hover:bg-[#e9eadb]"
+          href="#contact"
+          aria-label="Go to contact"
+        >
+          <span className="font-bold">04</span>
+          <span>Contact</span>
         </a>
       </nav>
 
@@ -429,12 +448,14 @@ export default function EnglishHome() {
                 Submit a title and abstract
               </h3>
               <p className="mt-5 max-w-2xl leading-7 text-[#dbe3dc]">
-                Please email a title and abstract to{' '}
+                Please submit your title and abstract as part of the workshop registration on{' '}
                 <a
                   className="font-semibold text-white underline decoration-[#d8d461]/50 underline-offset-4 hover:decoration-[#d8d461]"
-                  href="mailto:vipin.singh@bht-berlin.de"
+                  href="https://eveeno.com/calgolab-soilnet-workshop"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  vipin.singh@bht-berlin.de
+                  eveeno.com
                 </a>{' '}
                 by 10 October 2026. Posters will be displayed throughout the workshop, and
                 around 30 minutes are planned for discussion and exchange.
@@ -444,10 +465,12 @@ export default function EnglishHome() {
                   buttonVariants({ size: 'lg' }),
                   'mt-7 h-11 rounded-full bg-[#d8d461] px-5 font-semibold text-[#17382c] hover:bg-[#ecea91]',
                 )}
-                href="mailto:vipin.singh@bht-berlin.de?subject=Call%20for%20Posters%20%E2%80%93%20SoilNet%20Workshop"
+                href="https://eveeno.com/calgolab-soilnet-workshop"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <Mail aria-hidden="true" />
-                Submit by email
+                Submit via registration
               </a>
             </div>
             <div className="flex items-center border-t border-white/15 p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
@@ -519,6 +542,28 @@ export default function EnglishHome() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-[#efe8da]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:pl-44 lg:pr-12">
+          <p className="section-label">Contact</p>
+          <h2 className="font-heading mt-4 text-4xl tracking-tight sm:text-5xl">
+            Questions about the workshop?
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg leading-7 text-muted-foreground">
+            For questions about the workshop or the poster session, get in touch by email:
+          </p>
+          <a
+            className={cn(
+              buttonVariants({ size: 'lg' }),
+              'mt-7 h-11 rounded-full bg-[#17382c] px-5 font-semibold text-[#f6f1e5] hover:bg-[#1f4a3a]',
+            )}
+            href="mailto:vipin.singh@bht-berlin.de"
+          >
+            <Mail aria-hidden="true" />
+            vipin.singh@bht-berlin.de
+          </a>
         </div>
       </section>
 
