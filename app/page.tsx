@@ -429,7 +429,7 @@ export default function Home() {
                 >
                   eveeno.com
                 </a>{' '}
-                bis zum 10. Oktober 2026 ein. Die Poster werden während des Workshops
+                bis zum 8. November 2026 ein. Die Poster werden während des Workshops
                 ausgestellt; für den gemeinsamen Austausch sind rund 30 Minuten vorgesehen.
               </p>
               <a
@@ -450,10 +450,11 @@ export default function Home() {
                 <span className="inline-flex rounded-full bg-[#d8d461] px-3 py-1 text-xs font-bold tracking-wide text-[#17382c] uppercase">
                   Vorläufige Deadline
                 </span>
-                <p className="font-heading mt-5 text-3xl text-white">10. Oktober 2026</p>
+                <p className="font-heading mt-5 text-3xl text-white">8. November 2026</p>
                 <p className="mt-5 text-sm leading-6 text-[#b9c8be]">
                   Beiträge in einem frühen Stadium sind ausdrücklich willkommen. Auch erste
                   Ergebnisse, Tools und offene Fragestellungen sind passende Posterbeiträge.
+                  Die Deadline kann gegebenenfalls noch verlängert werden.
                 </p>
               </div>
             </div>

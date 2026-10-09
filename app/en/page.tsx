@@ -457,7 +457,7 @@ export default function EnglishHome() {
                 >
                   eveeno.com
                 </a>{' '}
-                by 10 October 2026. Posters will be displayed throughout the workshop, and
+                by 8 November 2026. Posters will be displayed throughout the workshop, and
                 around 30 minutes are planned for discussion and exchange.
               </p>
               <a
@@ -478,10 +478,11 @@ export default function EnglishHome() {
                 <span className="inline-flex rounded-full bg-[#d8d461] px-3 py-1 text-xs font-bold tracking-wide text-[#17382c] uppercase">
                   Provisional deadline
                 </span>
-                <p className="font-heading mt-5 text-3xl text-white">10 October 2026</p>
+                <p className="font-heading mt-5 text-3xl text-white">8 November 2026</p>
                 <p className="mt-5 text-sm leading-6 text-[#b9c8be]">
                   Early-stage contributions are explicitly welcome. Initial results, tools,
-                  and open questions all make suitable poster contributions.
+                  and open questions all make suitable poster contributions. The deadline
+                  may still be extended.
                 </p>
               </div>
             </div>
